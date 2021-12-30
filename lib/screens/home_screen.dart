@@ -12,6 +12,8 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          //crossAxisAlignment: CrossAxisAlignment.center, -> centrado al widget + grande, no a la pantalla
           children: const <Widget>[Text('Clicks counter'), Text('0')],
         ),
       ),
