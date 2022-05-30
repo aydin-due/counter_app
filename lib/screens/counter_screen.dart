@@ -8,9 +8,10 @@ class CounterScreen extends StatefulWidget {
 }
 
 class _CounterScreenState extends State<CounterScreen> {
-  int counter = 0; //propiedad, no variable
+  int counter = 0; //propiedad (cambia el estado)
 
   void increase() {
+    // 1 - crear función
     counter++;
     setState(() {});
   }
@@ -28,7 +29,7 @@ class _CounterScreenState extends State<CounterScreen> {
   @override
   Widget build(BuildContext context) {
     const fontSize30 = TextStyle(fontSize: 30);
-
+    //int counter = 0; variable (no cambia el estado)
     return Scaffold(
       appBar: AppBar(
         title: const Text('Counter Screen'),
@@ -46,7 +47,7 @@ class _CounterScreenState extends State<CounterScreen> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: CustomFloatingButtons(
-        increaseFn: increase,
+        increaseFn: increase, // 4 - mandar función como valor de propiedad
         decreaseFn: decrease,
         resetFn: reset,
       ),
@@ -55,13 +56,13 @@ class _CounterScreenState extends State<CounterScreen> {
 }
 
 class CustomFloatingButtons extends StatelessWidget {
-  final Function increaseFn;
+  final Function increaseFn; // 2 - crear propiedad
   final Function decreaseFn;
   final Function resetFn;
 
   const CustomFloatingButtons({
     Key? key,
-    required this.increaseFn,
+    required this.increaseFn, // 3 - inicializar propiedad
     required this.decreaseFn,
     required this.resetFn,
   }) : super(key: key);
